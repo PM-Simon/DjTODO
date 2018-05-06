@@ -21,6 +21,7 @@ from todoHandling.views import create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home),
     path('home/', home),
     path('autoren/', autoren),
     path('create/', create),

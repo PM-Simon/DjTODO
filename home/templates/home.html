@@ -4,8 +4,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="../../DjTODO/style/design.css">
-  <link href="../../DjTODO/style/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'design.css' %}">
+  <link href="../static/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
   <title>TODO</title>
 </head>
 <body>
@@ -99,6 +100,33 @@
         </div>
       </div>
     </div>
+     {% for todo in todos %}
+
+         <div class="todoItem p-2">
+            <h4>{{ todo.title }}</h4>
+            <div class="my-2">{{ todo.deadline }}</div>
+          <div class="my-2">
+            <div class="my-2">{{ todo.description }} </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="{{ todo.progress }}" aria-valuemin="0" aria-valuemax="100">{{ todo.progressh }}</div>
+            </div>
+          </div>
+          <div class="my-2">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" name="edit"  onClick="self.location.href='edit.html'">
+                <span class="oi oi-pencil"></span>
+                <span class="btn-no-mobile"> Bearbeiten</span>
+              </button>
+              <button type="button" class="btn btn-danger" name="delete">
+                <span class="oi oi-trash"></span>
+                <span class="btn-no-mobile"> L&ouml;schen</span>
+              </button>
+            </div>
+          </div>
+         </div>
+
+     {% endfor%}
+
   </div>
   </main>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>

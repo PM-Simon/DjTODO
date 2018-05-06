@@ -1,9 +1,11 @@
 from django.shortcuts import render
-
+from todoHandling.models import TODO
 
 
 def home(request):
-    return render(request, "home.html")
+    todos = TODO.objects.all()
+    args = {'todos': todos}
+    return render(request, "home.html", args)
 
 
 def autoren(request):
