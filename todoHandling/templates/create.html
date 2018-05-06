@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../DjTODO/style/design.css">
+  <title>create</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/home">TODO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/create">Erstellen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/autoren">Impressum<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <br>
+    <div id="main" class="container-fluid main">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6">
+          <form class="" action="" method="post">
+            <textarea class="form-control" placeholder="Beschreiben Sie ihr TODO..." rows="8" cols="80"></textarea><br>
+            <div style="width:200px">
+              Deadline: <br><input class="form-control" type="date" name="deadline" value=""><br>
+              Fortschritt: <br><input class="form-control" type="number" name="fortschritt" min="0" max="100"><br>
+              <button class="btn btn-primary" type="button" name="button" onclick="self.location.href='index.html'">Speichern</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </main>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
