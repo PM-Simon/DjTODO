@@ -37,11 +37,14 @@
         <div class="col-md-4"></div>
         <div class="col-md-6">
           <form class="" action="" method="post">
+              {% csrf_token %}
             <textarea class="form-control" placeholder="Beschreiben Sie ihr TODO..." rows="8" cols="80"></textarea><br>
             <div style="width:200px">
               Deadline: <br><input class="form-control" type="date" name="deadline" value=""><br>
               Fortschritt: <br><input class="form-control" type="number" name="fortschritt" min="0" max="100"><br>
-              <button class="btn btn-primary" type="button" name="button" onclick="self.location.href='index.html'">Speichern</button>
+              <div class ="form-group">
+                  <button class="btn btn-primary" type="submit" name="button" >Speichern</button>
+              </div>
             </div>
           </form>
         </div>

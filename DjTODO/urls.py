@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home
 from home.views import autoren
-from todoHandling.views import create
+from todoHandling import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('home/', home),
     path('autoren/', autoren),
-    path('create/', create),
+    path('create/', views.ObjectCreate.as_view())
 ]
