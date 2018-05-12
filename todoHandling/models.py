@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.urls import reverse
+
 # Create your models here.
 
 class TODO(models.Model):
@@ -8,6 +10,8 @@ class TODO(models.Model):
     deadline = models.DateField()
     progress = models.IntegerField()
 
+    def get_absolute_url(self):
+        return reverse('home')
 
     def __str__(self):
         return self.title + '-' + self.description

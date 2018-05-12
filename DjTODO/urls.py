@@ -23,7 +23,9 @@ from todoHandling import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('home/', home),
+    path('home/', home, name="home"),
     path('autoren/', autoren),
-    path('create/', views.ObjectCreate.as_view())
+    path('create/', views.todo_create),
+    path('create/(?P<pk>[0-9]+)/', views.todo_Update.as_view(), name="update-view")
+
 ]
